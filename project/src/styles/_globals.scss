@@ -1,7 +1,8 @@
 @use "helpers" as *;
 
 html,
-body {
+body,
+#root {
   height: 100%;
   overflow: auto;
 }
@@ -64,7 +65,7 @@ h5,
 
 h6,
 .h6 {
-  @include fluid-text(17, 16);
+  @include fluid-text(18, 17);
 
   font-weight: 500;
 }
