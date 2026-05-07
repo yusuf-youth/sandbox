@@ -1,0 +1,89 @@
+@use "../../styles/helpers/" as *;
+
+.table {
+  @include fluid-text(15, 14);
+
+  width: 100%;
+
+  &__body {
+  }
+
+  &__row {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 0.5fr 0.5fr;
+    align-items: center;
+    column-gap: 10px;
+    padding-block: 3px;
+    border-bottom: var(--border);
+
+    @include mobile {
+      padding-block: 6px;
+    }
+
+    &:first-child {
+      border-top: var(--border);
+    }
+  }
+
+  &__cell {
+    padding: 0;
+
+    &--item {
+      text-transform: capitalize;
+    }
+
+    &--amount {
+      display: inline-flex;
+
+      &::before {
+        content: "₴";
+        margin-right: 2px;
+      }
+    }
+
+    &--actions {
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      padding-right: 2px;
+    }
+
+    &-delete-button {
+      align-items: center;
+      padding-inline: 10px;
+      border-radius: 20px;
+      color: var(--color-light);
+      background-color: var(--color-red);
+      font-size: 13px;
+    }
+  }
+
+  &__cell-field {
+    @include focus-animation;
+  }
+
+  &__trash-button {
+    @include square(20px);
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition-duration: 0.05s;
+    pointer-events: none;
+
+    &.is-visible {
+      opacity: 0.8;
+      pointer-events: all;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    svg {
+      @include square(80%);
+    }
+  }
+}

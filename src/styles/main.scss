@@ -1,0 +1,13 @@
+@use "normalize";
+@use "fonts";
+@use "variables";
+@use "utils";
+@use "globals";
+
+@use "./components/icon.scss";
+
+@use "../components/Document/document.scss";
+@use "../components/TitleField/title-field.scss";
+@use "../components/DescriptionField/description-field.scss";
+@use "../components/TotalCard/total-card.scss";
+@use "../components/Table/table.scss";

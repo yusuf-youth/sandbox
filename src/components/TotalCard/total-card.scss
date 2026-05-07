@@ -1,0 +1,13 @@
+@use '../../styles/helpers/' as *;
+
+.total-card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4px;
+
+  &__label {
+    @include fluid-text(17, 15);
+
+    text-transform: capitalize;
+  }
+}

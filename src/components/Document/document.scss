@@ -1,0 +1,136 @@
+@use "../../styles/helpers/" as *;
+
+.document {
+  // temporary styles
+  max-width: 500px;
+  width: 100%;
+  margin-inline: auto;
+  padding-top: 25px;
+  // temporary styles
+
+  position: relative;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(10, 5);
+    min-height: 85px;
+    margin-bottom: 50px;
+  }
+
+  &__title,
+  &__title-field {
+    max-width: calc(100% - 50px);
+    min-height: 44px;
+  }
+
+  &__title-field,
+  &__description-field {
+    @include focus-animation;
+
+    width: 100%;
+    // min-height: 50px;
+    overflow: hidden;
+    resize: none;
+  }
+
+  &__description,
+  &__description-field {
+    @include fluid-text(17.5, 15);
+  }
+
+  &__description-field {
+    height: 22px;
+  }
+
+  &__edit-document-button {
+    position: absolute;
+    right: 0;
+    margin-top: 5px;
+
+    span {
+      @include fluid-text(17, 15);
+
+      font-weight: 500;
+      color: var(--color-blue);
+    }
+  }
+
+  &__icon-pen {
+    @include square(20px);
+
+    color: var(--color-gray);
+    fill: var(--color-gray);
+
+    &:hover {
+      color: var(--color-dark);
+      fill: var(--color-dark);
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 10px;
+    margin-top: 60px;
+    margin-bottom: 5px;
+  }
+
+  &__item-label,
+  &__item-label-field {
+    height: 20px;
+  }
+
+  &__item-label {
+    display: inline-flex;
+    align-items: center;
+    line-height: 0;
+  }
+
+  &__item-label-field {
+    @include focus-animation;
+
+    // max-width: fit-content;
+  }
+
+  &__add-item-button {
+    @include square(22px);
+
+    flex-shrink: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.7;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    span {
+      transform: translateY(0.5px);
+      scale: 1.2;
+    }
+
+    svg {
+      @include square(19px);
+    }
+  }
+
+  &__add-item-text-button {
+    flex-shrink: 0;
+    align-items: center;
+    padding-inline: 10px;
+    border-radius: 20px;
+    color: var(--color-blue);
+    // color: var(--color-light);
+    // background-color: var(--color-blue);
+    font-size: 14px;
+
+    span {
+      // font-size: 20px;
+      // scale: 1.8;
+      color: var(--color-red);
+    }
+  }
+}
