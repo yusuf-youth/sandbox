@@ -21,6 +21,8 @@ function Form({
         name: "",
         amount: 0,
       });
+
+      setShowPlaceholder(false);
     }
   }
 
