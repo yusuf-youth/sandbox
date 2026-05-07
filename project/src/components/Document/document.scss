@@ -15,7 +15,7 @@
     flex-direction: column;
     row-gap: fluid(10, 5);
     min-height: 85px;
-    margin-bottom: 50px;
+    margin-bottom: fluid(50, 35);
   }
 
   &__title,
@@ -36,7 +36,7 @@
 
   &__description,
   &__description-field {
-    @include fluid-text(17.5, 16);
+    @include fluid-text(17.5, 17);
   }
 
   &__description-field {
@@ -68,12 +68,16 @@
     }
   }
 
+  &__body {
+    padding-bottom: 30px;
+  }
+
   &__nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     column-gap: 10px;
-    margin-top: 60px;
+    margin-top: fluid(50, 35);
     margin-bottom: 5px;
   }
 
@@ -125,7 +129,7 @@
     color: var(--color-blue);
     // color: var(--color-light);
     // background-color: var(--color-blue);
-    font-size: 14px;
+    font-size: 15px;
 
     span {
       // font-size: 20px;

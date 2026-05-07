@@ -21,12 +21,16 @@ function Document({ id, name, hasInitialData, isEditMode }) {
     document = JSON.parse(savedDocument);
   } else if (hasInitialData) {
     document = hasInitialData;
+
+    console.log(hasInitialData.label)
+
     localStorage.setItem(id, JSON.stringify(document));
   } else {
     document = {
       name,
       description: "",
       items: document.items || [],
+      label: "Items"
     };
 
     localStorage.setItem(id, JSON.stringify(document));
@@ -49,10 +53,11 @@ function Document({ id, name, hasInitialData, isEditMode }) {
       name: title,
       description,
       items,
+      label
     };
 
     localStorage.setItem(id, JSON.stringify(document));
-  }, [title, description, items]);
+  }, [title, description, items, label]);
 
   return (
     <div className="document">
