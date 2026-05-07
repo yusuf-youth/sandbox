@@ -16,7 +16,7 @@ function NameField({ newItem, setNewItem }) {
   return (
     <td className="table__cell table__cell--item">
       <input
-        autoFocus
+        // autoFocus
         type="text"
         className={`table__cell-field has-focus reset-input`}
         placeholder="Item"

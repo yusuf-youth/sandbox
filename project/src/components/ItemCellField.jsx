@@ -20,7 +20,6 @@ function ItemCellField({ id, name, setItems }) {
   return (
     <td className="table__cell table__cell--item">
       <input
-        autoFocus
         type="text"
         className={`table__cell-field has-focus reset-input`}
         placeholder="Item"

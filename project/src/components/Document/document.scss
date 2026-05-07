@@ -36,7 +36,7 @@
 
   &__description,
   &__description-field {
-    @include fluid-text(17.5, 15);
+    @include fluid-text(17.5, 16);
   }
 
   &__description-field {
@@ -49,7 +49,7 @@
     margin-top: 5px;
 
     span {
-      @include fluid-text(17, 15);
+      @include fluid-text(17, 16);
 
       font-weight: 500;
       color: var(--color-blue);
