@@ -6,7 +6,9 @@
   row-gap: 4px;
 
   &__label {
-    @include fluid-text(17, 16);
+    // @include fluid-text(17, 16);
+
+    font-size: 17px;
 
     // font-weight: 500;
     // text-transform: capitalize;

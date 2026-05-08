@@ -24,9 +24,8 @@ function Document({ id, name, hasInitialData, isEditMode }) {
     localStorage.setItem(id, JSON.stringify(document));
   } else {
     document = {
-      name,
+      title: name,
       description: "",
-      // items: document.items || [],
       items: [],
       label: "Items",
     };
@@ -34,7 +33,7 @@ function Document({ id, name, hasInitialData, isEditMode }) {
     localStorage.setItem(id, JSON.stringify(document));
   }
 
-  const [title, setTitle] = useState(document.name || name);
+  const [title, setTitle] = useState(document.title || name);
   const [description, setDescription] = useState(document.description || "");
   const [label, setLabel] = useState(document.label || "Items");
   const [items, setItems] = useState(document.items);
@@ -49,10 +48,10 @@ function Document({ id, name, hasInitialData, isEditMode }) {
 
   useEffect(() => {
     document = {
-      name: title,
+      title,
       description,
-      items,
       label,
+      items,
     };
 
     localStorage.setItem(id, JSON.stringify(document));

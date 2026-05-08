@@ -84,7 +84,9 @@
 
   &__item-label,
   &__item-label-field {
-    @include fluid-text(17, 16);
+    // @include fluid-text(17, 17);
+
+    font-size: 17px;
 
     height: 20px;
   }
