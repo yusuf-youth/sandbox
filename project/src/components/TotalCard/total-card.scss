@@ -1,4 +1,4 @@
-@use '../../styles/helpers/' as *;
+@use "../../styles/helpers/" as *;
 
 .total-card {
   display: flex;
@@ -9,5 +9,16 @@
     @include fluid-text(17, 15);
 
     text-transform: capitalize;
+  }
+
+  &__amount {
+    display: inline-flex;
+    align-items: end;
+
+    &::before {
+      content: "₴";
+      margin-right: 6px;
+      font-size: 0.9em;
+    }
   }
 }
