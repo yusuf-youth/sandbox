@@ -1,11 +1,11 @@
 @use "helpers" as *;
 
 html,
-// body,
-// #root {
-//   height: 100%;
-//   overflow: auto;
-// }
+body,
+#root {
+  height: 100%;
+  overflow: auto;
+}
 
 body {
   @include fluid-text(18, 16);
