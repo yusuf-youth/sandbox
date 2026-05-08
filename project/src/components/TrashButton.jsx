@@ -9,7 +9,7 @@ function TrashButton({ id, editMode, setItems }) {
 
   return (
     <button
-      className={`table__trash-button reset-button ${editMode ? "is-visible" : ""} hidden-mobile`}
+      className={`table__trash-button reset-button ${editMode ? "is-visible" : ""} `}
       aria-label="Delete row"
       title="Delete row"
       onClick={onClick}

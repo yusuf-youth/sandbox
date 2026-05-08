@@ -2,10 +2,10 @@
 
 .document {
   // temporary styles
-  max-width: 500px;
-  width: 100%;
-  margin-inline: auto;
-  padding-top: 25px;
+  // max-width: 500px;
+  // width: 100%;
+  // margin-inline: auto;
+  // padding-top: 25px;
   // temporary styles
 
   position: relative;
@@ -15,7 +15,7 @@
     flex-direction: column;
     row-gap: fluid(10, 5);
     min-height: 85px;
-    margin-bottom: fluid(40, 25);
+    margin-bottom: fluid(45, 25);
   }
 
   &__title,
@@ -36,7 +36,7 @@
 
   &__description,
   &__description-field {
-    @include fluid-text(18, 16);
+    @include fluid-text(18, 17);
   }
 
   &__description-field {
@@ -112,6 +112,10 @@
     align-items: center;
     opacity: 0.8;
 
+    @include tablet {
+      display: none;
+    }
+
     &:hover {
       opacity: 1;
       // color: var(--color-blue);
@@ -135,6 +139,14 @@
     border-radius: 20px;
     color: var(--color-blue);
     font-size: 16px;
+
+    @include tablet-above {
+    display: none;
+    }
+
+    @include tablet {
+      display: inline-flex;
+    }
 
     span {
       color: var(--color-red);

@@ -9,19 +9,19 @@ import ItemLabel from "../ItemLabel/ItemLabel";
 import ItemLabelField from "../ItemLabelField/ItemLabelField";
 import AddItemButton from "../AddItemButton/AddItemButton";
 import Table from "../Table/Table";
-import useDocumentContext from "../../hooks/useDocumentContext";
+import useDocumentContext from "../../hooks/useAppContext";
 import Form from "../Form";
 import AddItemTextButton from "../AddItemTextButton";
 
-function Document({ id, name, hasInitialData, isEditMode }) {
+function DocumentPage({ storageId, name, hasInitialData, isEditMode }) {
   let document;
-  const savedDocument = localStorage.getItem(id);
+  const savedDocument = localStorage.getItem(storageId);
 
   if (savedDocument) {
     document = JSON.parse(savedDocument);
   } else if (hasInitialData) {
     document = hasInitialData;
-    localStorage.setItem(id, JSON.stringify(document));
+    localStorage.setItem(storageId, JSON.stringify(document));
   } else {
     document = {
       title: name,
@@ -30,7 +30,7 @@ function Document({ id, name, hasInitialData, isEditMode }) {
       label: "Items",
     };
 
-    localStorage.setItem(id, JSON.stringify(document));
+    localStorage.setItem(storageId, JSON.stringify(document));
   }
 
   const [title, setTitle] = useState(document.title || name);
@@ -41,7 +41,7 @@ function Document({ id, name, hasInitialData, isEditMode }) {
   const [editMode, setEditMode] = useState(false);
   const [showPlaceholder, setShowPlaceholder] = useState(false);
   const [newItem, setNewItem] = useState({
-    id: null,
+    storageId: null,
     name: "",
     amount: 0,
   });
@@ -54,7 +54,7 @@ function Document({ id, name, hasInitialData, isEditMode }) {
       items,
     };
 
-    localStorage.setItem(id, JSON.stringify(document));
+    localStorage.setItem(storageId, JSON.stringify(document));
   }, [title, description, items, label]);
 
   return (
@@ -125,4 +125,4 @@ function Document({ id, name, hasInitialData, isEditMode }) {
   );
 }
 
-export default Document;
+export default DocumentPage;

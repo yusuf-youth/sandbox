@@ -1,6 +1,6 @@
 import React from "react";
 import { PlusIcon } from "../../assets/Icons";
-import useDocumentContext from "../../hooks/useDocumentContext";
+import useDocumentContext from "../../hooks/useAppContext";
 
 function AddItemButton({ showPlaceholder, setShowPlaceholder }) {
   function onClick() {
@@ -9,7 +9,7 @@ function AddItemButton({ showPlaceholder, setShowPlaceholder }) {
 
   return (
     <button
-      className="document__add-item-button reset-button hidden-mobile"
+      className="document__add-item-button reset-button"
       aria-label={showPlaceholder ? "Close" : "Add row"}
       title={showPlaceholder ? "Close" : "Add row"}
       onClick={onClick}

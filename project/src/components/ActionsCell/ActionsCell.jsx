@@ -11,7 +11,7 @@ function ActionsCell({ id, editMode, setItems }) {
       <TrashButton id={id} editMode={editMode} setItems={setItems} />
 
       <button
-        className="table__cell-delete-button visible-mobile visible-mobile reset-button"
+        className="table__cell-delete-button  reset-button"
         style={{ display: editMode ? "inline-flex" : "none" }}
         onClick={onClick}
       >

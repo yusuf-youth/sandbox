@@ -53,3 +53,87 @@ export const TrashIcon = () => (
     />
   </svg>
 );
+
+export const DocumentIcon = ({ className }) => (
+  <svg
+    className={className || ""}
+    width="160"
+    height="160"
+    viewBox="0 0 200 236"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <defs>
+      <linearGradient
+        id="mainBody"
+        x1="100"
+        y1="0"
+        x2="100"
+        y2="236"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0%" stopColor="#FCFCFC" />
+        <stop offset="100%" stopColor="#E5E5E5" />
+      </linearGradient>
+
+      <linearGradient
+        id="dogEar"
+        x1="168"
+        y1="1"
+        x2="168"
+        y2="61"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0%" stopColor="#F2F2F2" />
+        <stop offset="100%" stopColor="#BBBBBB" />
+      </linearGradient>
+    </defs>
+
+    {/* Document Body */}
+    <path
+      className="body"
+      d="M10 0C4.47715 0 0 4.47715 0 10V226C0 231.523 4.47715 236 10 236H190C195.523 236 200 231.523 200 226V61.1601L139.16 0H10Z"
+      fill="url(#mainBody)"
+    />
+
+    {/* "Document" Text */}
+    <text
+      x="100"
+      y="118"
+      dominantBaseline="middle"
+      textAnchor="middle"
+      fontFamily="Roboto"
+      fontSize="30"
+      fontWeight="600"
+      fill="#1C1C1C"
+      style={{ letterSpacing: "-0.5px" }}
+    >
+      {/* {Array.isArray(text) ? (
+        text.map((line) => (
+          <tspan key={line} x="100" dy="1.2em" textAnchor="middle">
+            {line}
+          </tspan>
+        ))
+      ) : (
+        <tspan x="100" y="118" dy="1.2em" textAnchor="middle">
+          {text}
+        </tspan>
+      )} */}
+      {/* <tspan x="100" y="118" textAnchor="middle">
+        Monthly
+      </tspan>
+      <tspan x="100" y="148" textAnchor="middle">
+        Spendings
+      </tspan> */}
+    </text>
+
+    {/* Folded Corner */}
+    <path
+      className="fold"
+      d="M139.16 0L200 61.1601H150C144 61.1601 139.16 56 139.16 50V0Z"
+      fill="url(#dogEar)"
+      stroke="#FFFFFF"
+      strokeWidth="0.7"
+    />
+  </svg>
+);

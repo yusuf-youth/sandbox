@@ -1,0 +1,97 @@
+@use "../helpers/" as *;
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 400px 500px;
+  height: 100%;
+  padding-top: 25px;
+
+  @include laptop {
+    grid-template-columns: minmax(230px, 300px) 500px;
+  }
+
+  @include mobile {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__nav {
+    @include mobile {
+      display: none;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      row-gap: 15px;
+      width: 100%;
+    }
+
+    &-item {
+      width: 100%;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    &-button {
+      display: flex;
+      align-items: center;
+      column-gap: 10px;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    &-icon {
+      @include square(40px);
+
+      color: initial;
+      filter: drop-shadow(-1px 1px 8px rgba(0, 0, 0, 0.12));
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      path.body {
+        fill: var(--color-light);
+      }
+
+      path.fold {
+        fill: var(--color-light);
+        stroke: unset;
+        filter: drop-shadow(-2px 3px 4px rgba(0, 0, 0, 0.2));
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+
+    @include mobile {
+      max-width: 450px;
+      width: 100%;
+    }
+  }
+
+  &__switch-document-button {
+    position: fixed;
+    right: 15px;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    column-gap: 7px;
+    padding: 5px 10px;
+    border-radius: 50px;
+    font-size: 15px;
+    background-color: #dddddd;
+
+    @include mobile-above {
+      display: none;
+    }
+
+    svg {
+      @include square(18px);
+    }
+  }
+}

@@ -4,7 +4,7 @@ import ItemCellField from "../ItemCellField";
 import AmountCellField from "../AmountCellField/AmountCellField";
 import AmountCell from "../AmountCell/AmountCell";
 import ActionsCell from "../ActionsCell/ActionsCell";
-import useDocumentContext from "../../hooks/useDocumentContext";
+import useDocumentContext from "../../hooks/useAppContext";
 import NameField from "../NameField";
 import AmountField from "../AmountField";
 

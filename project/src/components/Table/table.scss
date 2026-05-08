@@ -18,7 +18,7 @@
     padding-block: 3px;
     border-bottom: var(--border);
 
-    @include mobile {
+    @include tablet {
       padding-block: 6px;
     }
 
@@ -57,6 +57,14 @@
       color: var(--color-light);
       background-color: var(--color-red);
       font-size: 14px;
+
+      @include tablet-above {
+        display: none !important;
+      }
+
+      @include tablet {
+        display: inline-flex;
+      }
     }
   }
 
@@ -75,6 +83,10 @@
     opacity: 0;
     transition-duration: 0.05s;
     pointer-events: none;
+
+    @include tablet {
+      display: none;
+    }
 
     &.is-visible {
       opacity: 0.8;
