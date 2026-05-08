@@ -5,7 +5,7 @@ function TotalCard({ items }) {
 
   return (
     <div className="total-card">
-      <h3 className="total-card__label">Total</h3>
+      <h4 className="total-card__label">Total</h4>
       <h3 className="total-card__amount">
         {totalAmount.toLocaleString("fr-FR")}
       </h3>

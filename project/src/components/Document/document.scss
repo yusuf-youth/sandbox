@@ -36,7 +36,7 @@
 
   &__description,
   &__description-field {
-    @include fluid-text(17.5, 17);
+    @include fluid-text(17, 16);
   }
 
   &__description-field {
@@ -84,6 +84,8 @@
 
   &__item-label,
   &__item-label-field {
+    @include fluid-text(16, 16);
+
     height: 20px;
   }
 
@@ -110,7 +112,7 @@
 
     &:hover {
       opacity: 1;
-      color: var(--color-blue);
+      // color: var(--color-blue);
     }
 
     span {
@@ -130,14 +132,25 @@
     padding-inline: 10px;
     border-radius: 20px;
     color: var(--color-blue);
-    // color: var(--color-light);
-    // background-color: var(--color-blue);
-    font-size: 16.5px;
+    font-size: 16px;
 
     span {
-      // font-size: 20px;
-      // scale: 1.8;
       color: var(--color-red);
+    }
+  }
+
+  &__form {
+    margin-bottom: fluid(50, 35);
+  }
+
+  &__repayment-plan-button {
+    @include fluid-text(17, 16);
+
+    opacity: 0.7;
+
+    @include hover {
+      opacity: 1;
+      color: var(--color-blue);
     }
   }
 }

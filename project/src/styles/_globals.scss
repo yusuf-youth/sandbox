@@ -1,11 +1,11 @@
 @use "helpers" as *;
 
 html,
-body,
-#root {
-  height: 100%;
-  overflow: auto;
-}
+// body,
+// #root {
+//   height: 100%;
+//   overflow: auto;
+// }
 
 body {
   @include fluid-text(18, 16);
@@ -45,12 +45,12 @@ h1,
 
 h2,
 .h2 {
-  @include fluid-text(40, 32);
+  @include fluid-text(36, 32);
 }
 
 h3,
 .h3 {
-  @include fluid-text(36, 28);
+  @include fluid-text(32, 26);
 }
 
 h4,
@@ -65,7 +65,7 @@ h5,
 
 h6,
 .h6 {
-  @include fluid-text(18, 17);
+  @include fluid-text(18, 16);
 
   font-weight: 500;
 }

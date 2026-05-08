@@ -13,8 +13,7 @@ function AddItemTextButton({ showPlaceholder, setShowPlaceholder }) {
       onClick={onClick}
     >
       {showPlaceholder ? (
-        // <span>&times;</span>
-        <>Close</>
+        <span>Close</span>
       ) : (
         <>Add Item</>
       )}

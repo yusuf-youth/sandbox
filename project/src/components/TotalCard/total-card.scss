@@ -6,9 +6,10 @@
   row-gap: 4px;
 
   &__label {
-    @include fluid-text(17, 15);
+    @include fluid-text(16, 16);
 
-    text-transform: capitalize;
+    // font-weight: 500;
+    // text-transform: capitalize;
   }
 
   &__amount {

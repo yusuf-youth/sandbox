@@ -62,6 +62,8 @@
 
   &__cell-field {
     @include focus-animation;
+
+    text-transform: capitalize;
   }
 
   &__trash-button {

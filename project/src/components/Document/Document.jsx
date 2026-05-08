@@ -21,16 +21,14 @@ function Document({ id, name, hasInitialData, isEditMode }) {
     document = JSON.parse(savedDocument);
   } else if (hasInitialData) {
     document = hasInitialData;
-
-    console.log(hasInitialData.label)
-
     localStorage.setItem(id, JSON.stringify(document));
   } else {
     document = {
       name,
       description: "",
-      items: document.items || [],
-      label: "Items"
+      // items: document.items || [],
+      items: [],
+      label: "Items",
     };
 
     localStorage.setItem(id, JSON.stringify(document));
@@ -39,8 +37,9 @@ function Document({ id, name, hasInitialData, isEditMode }) {
   const [title, setTitle] = useState(document.name || name);
   const [description, setDescription] = useState(document.description || "");
   const [label, setLabel] = useState(document.label || "Items");
-  const [items, setItems] = useState(isEditMode ? [] : document.items || []);
-  const [editMode, setEditMode] = useState(isEditMode);
+  const [items, setItems] = useState(document.items);
+  // const [editMode, setEditMode] = useState(isEditMode);
+  const [editMode, setEditMode] = useState(false);
   const [showPlaceholder, setShowPlaceholder] = useState(false);
   const [newItem, setNewItem] = useState({
     id: null,
@@ -53,7 +52,7 @@ function Document({ id, name, hasInitialData, isEditMode }) {
       name: title,
       description,
       items,
-      label
+      label,
     };
 
     localStorage.setItem(id, JSON.stringify(document));
@@ -118,6 +117,10 @@ function Document({ id, name, hasInitialData, isEditMode }) {
             setNewItem={setNewItem}
           />
         </Form>
+
+        {/* <button className="document__repayment-plan-button reset-button">
+          Add Repayment Plan
+        </button> */}
       </div>
     </div>
   );
