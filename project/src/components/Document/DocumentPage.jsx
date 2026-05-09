@@ -12,8 +12,11 @@ import Table from "../Table/Table";
 import useDocumentContext from "../../hooks/useAppContext";
 import Form from "../Form";
 import AddItemTextButton from "../AddItemTextButton";
+import useAppContext from "../../hooks/useAppContext";
 
 function DocumentPage({ storageId, name, hasInitialData, isEditMode }) {
+  const { setDocuments } = useAppContext();
+
   let document;
   const savedDocument = localStorage.getItem(storageId);
 
@@ -56,6 +59,21 @@ function DocumentPage({ storageId, name, hasInitialData, isEditMode }) {
 
     localStorage.setItem(storageId, JSON.stringify(document));
   }, [title, description, items, label]);
+
+  useEffect(() => {
+    setDocuments((documents) => {
+      return documents.map((doc) => {
+        if (doc.storageId === storageId) {
+          return {
+            ...doc,
+            documentName: title,
+          };
+        }
+
+        return doc;
+      });
+    });
+  }, [title]);
 
   return (
     <div className="document">
